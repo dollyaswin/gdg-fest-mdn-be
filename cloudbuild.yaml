@@ -2,13 +2,10 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Build and Deploy to Dev Server
   entrypoint: /bin/sh
-  env:
-    - 'ENV_BRANCH=${_ENV_BRANCH}'
-    - 'ENV_PULL_PATH=${_ENV_PULL_PATH}'
   args:
   - '-c'
   - |
     set -x && \
-    gcloud compute ssh gdg@gdg-fest-mdn-env-dev --zone=asia-southeast2-a --command='cd ${ENV_PULL_PATH}; ./deploy.sh'
+    gcloud compute ssh gdg@gdg-fest-mdn-env-dev --zone=asia-southeast2-a --command='cd ${_ENV_PULL_PATH}; ./deploy.sh'
 options:
   logging: CLOUD_LOGGING_ONLY
