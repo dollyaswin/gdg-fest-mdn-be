@@ -3,7 +3,7 @@ steps:
   id: Build and Deploy to Dev Server
   entrypoint: /bin/sh
   env:
-  - 'ENV_BRANCH=${_ENV_BRANCH}'
+    - 'ENV_BRANCH=${_ENV_BRANCH}'
   args:
   - '-c'
   - |
