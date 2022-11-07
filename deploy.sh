@@ -1,6 +1,7 @@
 #!/bin/bash
 
-BE_PATH=/var/www/gdg/api/current
+echo "Read Configuration..."
+while read line; do export $line; done < .env
 
 echo "Build..."
 git pull origin ${ENV_BRANCH}
