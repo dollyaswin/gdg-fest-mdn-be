@@ -7,3 +7,5 @@ steps:
   - |
     set -x && \
     gcloud compute ssh gdg@gdg-fest-mdn-env-dev --zone=asia-southeast2-a --command='/bin/sh /home/gdg/gdg-fest-mdn-be/deploy.sh'
+options:
+  logging: CLOUD_LOGGING_ONLY
