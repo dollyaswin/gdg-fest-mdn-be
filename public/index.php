@@ -1,2 +1,2 @@
 <?php
-echo 'Google Dev Fest Medan 2022!';
+echo 'Google Dev Fest Medan!';
