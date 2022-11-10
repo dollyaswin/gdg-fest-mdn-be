@@ -4,7 +4,7 @@
 #while read line; do export $line; done < .env
 
 echo "Build..."
-git pull origin ${BRANCH}
+# git pull origin ${BRANCH}
 # rm -fr vendor
 # composer install
 
