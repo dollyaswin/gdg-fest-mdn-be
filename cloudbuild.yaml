@@ -6,6 +6,6 @@ steps:
   - '-c'
   - |
     set -x && \
-    gcloud compute ssh gdg@gdg-fest-mdn-env-dev --zone=asia-southeast2-a --command='cd ${_ENV_PULL_PATH}; ./deploy.sh'
+    gcloud compute ssh gdg@gdg-fest-mdn-env-dev --zone=asia-southeast2-a --command='export APP_PATH=${_ENV_APP_PATH}; export BRANCH=${_ENV_BRANCH}; cd ${_ENV_PULL_PATH}; ./deploy.sh'
 options:
   logging: CLOUD_LOGGING_ONLY
