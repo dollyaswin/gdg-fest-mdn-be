@@ -1,11 +1,9 @@
 #!/bin/bash
 
-#echo "Read Configuration..."
-#while read line; do export $line; done < .env
-
 echo "Build..."
-# rm -fr vendor
-# composer install
+cd src
+rm -fr vendor
+composer install
 
 echo "Deploy..."
 rsync --exclude ".git" -av --delete . $APP_PATH/.
