@@ -1,7 +1,6 @@
 .env
 .phpunit.result.cache
 .idea
-.env
 vendor
 Homestead.json
 Homestead.yaml
