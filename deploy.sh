@@ -14,7 +14,7 @@ cd $APP_PATH/
 php artisan cache:clear
 
 # run database migration
-#php artisan migrate --force
+php artisan migrate --force
 
 echo "Reload PHP & Nginx"
 sudo systemctl reload php8.1-fpm
