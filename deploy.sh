@@ -1,9 +1,7 @@
 #!/bin/bash
 
-#echo "Read Configuration..."
-#while read line; do export $line; done < .env
-
 echo "Build..."
+cd src
 # rm -fr vendor
 # composer install
 
