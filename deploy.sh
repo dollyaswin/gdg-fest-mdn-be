@@ -6,14 +6,20 @@ rm -fr vendor
 composer install
 
 echo "Deploy..."
-rsync --exclude '.git' --exclude '.env' --exclude 'storage' -av --delete . $APP_PATH/.
+rsync --exclude '.git' --exclude 'storage' -av --delete . $APP_PATH/.
 
 cd $APP_PATH/
 
-# clear cache
+# cache
+echo "Clear Config/Cache..."
+php artisan config:clear
 php artisan cache:clear
 
+echo "Cache Config..."
+php artisan config:cache
+
 # run database migration
+echo "Database Migration..."
 php artisan migrate --force
 
 echo "Reload PHP & Nginx"
