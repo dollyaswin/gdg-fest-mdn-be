@@ -12,11 +12,7 @@ cd $APP_PATH/
 
 # cache
 echo "Clear Config/Cache..."
-php artisan config:clear
 php artisan cache:clear
-
-echo "Cache Config..."
-php artisan config:cache
 
 # run database migration
 echo "Database Migration..."
