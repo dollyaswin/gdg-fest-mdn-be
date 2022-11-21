@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class BookController extends Controller
 {
@@ -21,7 +22,7 @@ class BookController extends Controller
     public function create(Request $request)
     {
         $book = Book::create($request->all());
-        return response()->json($book);
+        return response()->json($book, Response::HTTP_CREATED);
     }
  
     public function update(Request $request, $id)
@@ -33,7 +34,7 @@ class BookController extends Controller
         $book->publisher = $request->input('publisher');
         $book->save();
  
-        return response()->json($book);
+        return response()->json($book, Response::HTTP_OK);
     }
 
     public function delete($id)
@@ -41,7 +42,7 @@ class BookController extends Controller
         $book  = Book::find($id);
         $book->delete();
  
-        return response()->json('Removed successfully.');
+        return response()->json([], Response::HTTP_NO_CONTENT);
     }
 
     public function fetchAll()
