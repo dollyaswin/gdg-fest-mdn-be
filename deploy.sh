@@ -6,7 +6,7 @@ rm -fr vendor
 composer install
 
 echo "Deploy..."
-rsync --exclude '.git' --exclude 'storage' -av --delete . $APP_PATH/.
+rsync --exclude '.git' --exclude 'storage' -a --delete . $APP_PATH/.
 
 cd $APP_PATH/
 
