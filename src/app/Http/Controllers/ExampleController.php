@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Symfony\Component\HttpFoundation\Response;
+
 class ExampleController extends Controller
 {
     /**
@@ -14,5 +16,8 @@ class ExampleController extends Controller
         //
     }
 
-    //
+    public function getHomePage()
+    {
+        return response()->json(null, Response::HTTP_OK);
+    }
 }
